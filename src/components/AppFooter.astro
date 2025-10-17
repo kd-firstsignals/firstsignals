@@ -1,0 +1,52 @@
+---
+import BrandIcon from "./BrandIcon.astro";
+import Container from "./Container.astro";
+
+type Link = {
+  title: string;
+  url: string;
+};
+
+const companyLinks = [
+  { title: "Request Demo", url: "/demo/" },
+  { title: "About Us", url: "/company/" },
+  { title: "Contact", url: "/contact/" }
+];
+
+const legalLinks = [
+  { title: "Terms Of Use", url: "/tos/" },
+  { title: "Privacy Policy", url: "/tos/" }
+];
+---
+
+<footer class="pb-6 sm:pb-12 lg:pb-20">
+    <Container>
+      <div class="p-6 rounded-[--card-border-radius] bg-gray-50 mx-auto dark:bg-[--card-dark-bg] sm:p-12">
+          <div class="flex">
+            <BrandIcon />
+          </div>
+          <div class="mt-12 mb-6 flex gap-12">
+            <div>
+              <span class="text-gray-950 dark:text-white font-medium">Company</span>
+              <ul class="mt-6 space-y-2">
+                {companyLinks.map((link: Link) => (
+                  <li>
+                    <a href={link.url} class="text-gray-600 dark:text-gray-400 transition hover:text-primary-600 dark:hover:text-primary-400">{link.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <span class="text-gray-950 dark:text-white font-medium">Legal</span>
+              <ul class="mt-6 space-y-2">
+                {legalLinks.map((link: Link) => (
+                  <li>
+                    <a href={link.url} class="text-gray-600 dark:text-gray-400 transition hover:text-primary-600 dark:hover:text-primary-400">{link.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+        </div>
+      </div>
+    </Container>
+</footer>
