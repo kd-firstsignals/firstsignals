@@ -1,8 +1,7 @@
 ---
 import {
     SITE_TITLE,
-    SITE_DESCRIPTION,
-    SITE_IMAGE,
+    SITE_DESCRIPTION
 } from "../consts"
 export interface Props {
 	title?: string;
@@ -11,7 +10,7 @@ export interface Props {
     url? : string;
 }
 
-const { title=SITE_TITLE, description=SITE_DESCRIPTION, image = SITE_IMAGE } = Astro.props;
+const { title=SITE_TITLE, description=SITE_DESCRIPTION} = Astro.props;
 ---
 
 <meta charset="UTF-8" />
